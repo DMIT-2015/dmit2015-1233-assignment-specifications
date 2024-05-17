@@ -1,11 +1,5 @@
-# DMIT2015 Assignment Specifications - Spring 2024 Term
+# DMIT2015 Assignments - Spring 2024 Term
 
-> Assignments for this term are posted to this repository. You can copy these instructions to your assignment repository set up by your instructor for this term. However, any updates to the instructions will be placed within this repository.
+> DMIT2015 assignment specifications are posted on this repository. 
 
 1. [Assignment 1](./dmit2015-1233-assignment01.adoc)
-
-## Submission of assignment
-
-Your source code must be pushed to your assignment GitHub repository before the due date. 
-Marking rubrics are within the assignment.
-
