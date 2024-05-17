@@ -186,31 +186,36 @@ You can display image from a Faces page using the PrimeFaces `p:graphicImage` ta
 ----
 +
 . Create a new file using the file template *DMIT2015 Firebase REST API Http Client* and modify the code to test endpoints to:
-.. Create three different json objects to Firebase Realtime Database.
-.. Get all json data from the Firebase Realtime Database.
-.. Get one json data from the Firebase Realtime Database.
-.. Update one json data in the Firebase Realtime Database.
-.. Delete one json data in the Firebase Realtime Database.
+** [ ] Create three different json objects to Firebase Realtime Database.
+** [ ] Get all json data from the Firebase Realtime Database.
+** [ ] Get one json data from the Firebase Realtime Database.
+** [ ] Update one json data in the Firebase Realtime Database.
+** [ ] Delete one json data in the Firebase Realtime Database.
 
 . Create and code a Faces web page and its supporting Java classes to allow the user to perform CRUD operations on the JSON data 
-stored in your Firebase Realtime Database.
+stored in your Firebase Realtime Database. All CRUD operations must be perform on the same page.
 You can use the file template *DMIT2015 Faces FirebaseRTDB HttpClient CRUD View* to create the Faces backing bean class.
 You can use the file template *DMIT2015 Faces Composition Page* to create the Faces web page.
-Add a button to generate data for at minium one of fields using the *Data Faker* library.
-Add a button to clear all form fields.
+** To create new data the user will input value for each form field then click on a button to add data.
+*** Add a button to generate data using the *Data Faker* library for at minimum one of fields.
+*** Add a button to clear all form fields.
+** When the page loads it will display a table of all JSON data stored in your Firebase Realtime Database.
+** To edit data the user will navigate to the row with data to change, input new values on the column input fields, and click on the *Update* button.
+** To delete data the will will navigate to the row that contains the data to delete, click on the *Delete* button, and click Yes on the delete confirmation dialog.
 
 . Modify `src/main/webapp/WEB-INF/faces-templates/layout.xhtml` and add menuitem to the Faces web pages you created.
+
 . Edit the `README.md` on the assigment GitHub repository with an assignment dicussion on your status (all complete, partial complete) on this assignment, time spent working on assignment, and any feedback for improving this assignment.
 .. Example 1: This assignment is complete and am ready to demo its functionality. It took me only the allocated class time to finish it. 
 To make this assignment more interesting and real-life like add requirement to validate input data in the form.
 .. Example 2: This assignment is partially complete. The Http Request are working as expected. The Faces backing bean and web page are coded and I can create data but the data table does not display any data. I have spent about 4 hours working on this assignment. More information on how to debug our application will be helpful in the future.
 
+. Submit a link to your assignment GitHub repository to Moodle when your assignment is ready for marking.
 
 == CODING REQUIREMENTS
-* Java package names must be all in lower case.
-* Java fields and methods must be in camelCase.
-* Java class name must be in PascalCase.
-* Jakarta Faces file names must be all in lower case.
+* Java packages and classes must follow https://www.oracle.com/java/technologies/javase/codeconventions-namingconventions.html[Java Naming Conventions]
+* Avoid lines longer than 80 characters
+* Jakarta Faces file name must be all in lower case.
 * Do *NOT* reuse the instructor's demo project from this term or previous terms as your assigment project (*100%* deduction for re-submitting instructor work)
 * You *MUST* demo your assigment in person to your instructor (*50%* deduction if you do not demo in person)
 * A project with source code compile errors will be assigned a mark of 0.
@@ -221,8 +226,20 @@ To make this assignment more interesting and real-life like add requirement to v
 |===
 | Requirement | Marks
 
-| You have shown to your instructor your Http Request to perform CRUD(Create, Read All, Read One, Update, Delete) operations on the Firebase Realtime Database REST API.
+a| You have shown to your instructor your Http Request to perform CRUD (Create, Read All, Read One, Update, Delete) operations on the Firebase Realtime Database REST API.
 This is due at the beginning of class on week 2 day 3.
+
+[%interactive]
+* [ ] Create three different json objects to Firebase Realtime Database.
+
+* [ ] Get all json data from the Firebase Realtime Database.
+
+* [ ] Get one json data from the Firebase Realtime Database.
+
+* [ ] Update one json data in the Firebase Realtime Database.
+
+* [ ] Delete one json data in the Firebase Realtime Database.
+
 | 5
 
 | Demonstrate functional Faces home page that contains a description of the assignment and a image of yourself.
@@ -231,9 +248,7 @@ This is due at the beginning of class on week 2 day 3.
 | Demonstrate functional Faces web page to add new data to the Firebase Realtime Database.
 Use the Firebase Console to verify data has been added to Firebase Realtime Database.
 
-Demonstrate form field input validation and the button to clear all form fields.
-
-Demonstrate generating data for at least one of the form fields using DataFaker.
+Demonstrate generating data for at least one of the form fields.
 
 | 3
 
@@ -241,11 +256,11 @@ Demonstrate generating data for at least one of the form fields using DataFaker.
 Use the Firebase Console to verify Faces web page content matches data in Firebase Realtime Database.
 | 2
 
-| Demonstrate functional Faces web page for editing and updating data in the Firebase Realtime Database.
+| Demonstrate editing and updating selected data in the Firebase Realtime Database.
 Use the Firebase Console to verify data has been updated in Firebase Realtime Database.
 | 2
 
-| Demonstrate functional Faces web page for deleting selected data in the Firebase Realtime Database.
+| Demonstrate deleting selected data in the Firebase Realtime Database.
 Use the Firebase Console to verify data has been deleted in Firebase Realtime Database.
 | 2
 
