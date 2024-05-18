@@ -227,7 +227,6 @@ To make this assignment more interesting and real-life like add requirement to v
 | Requirement | Marks
 
 a| You have shown to your instructor your Http Request to perform CRUD (Create, Read All, Read One, Update, Delete) operations on the Firebase Realtime Database REST API.
-This is due at the beginning of class on week 2 day 3.
 
 [%interactive]
 * [ ] Create three different json objects to Firebase Realtime Database.
