@@ -5,7 +5,7 @@
 == OBJECTIVE
 Upon completion of this assignment, you will have demonstrated the ability to:
 
-- Use Firebase Authentication to create users and add a Email/Password sing provider. 
+- Use Firebase Authentication to create users and add a Email/Password provider. 
 - Use Firebase Realtime Database security rules to restrict access to REST API endpoints
 - Write a REST Client to consume Firebase Authentication REST API endpoints.
 - Write a REST Client to use tokens with Firebase Realtime Database REST API endpoints
