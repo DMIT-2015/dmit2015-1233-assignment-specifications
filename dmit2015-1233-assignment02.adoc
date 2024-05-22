@@ -169,6 +169,7 @@ Add two new user using the Firebase Console or using the Firebase Authentication
 An bean validation constraints to check for valid email address format 
 and password contains at minimum one lower case letter, one uppercase letter, one digits, and 12 or more characters.
 . Modify the Faces web page and its supporting Java classes to allow an authenticated user to perform CRUD operations on their own data.
+. Edit the `README.md` on the assigment GitHub repository with an assignment dicussion on your status (all complete, partial complete) on this assignment, time spent working on assignment, and any feedback for improving this assignment.
 
 == CODING REQUIREMENTS
 * Do *NOT* reuse the instructor's demo project from this term or previous terms as your assigment project (*100%* deduction for re-submitting instructor work)
