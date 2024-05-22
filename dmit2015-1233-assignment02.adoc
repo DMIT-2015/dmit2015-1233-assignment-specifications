@@ -182,46 +182,64 @@ and password contains at minimum one lower case letter, one uppercase letter, on
 | Demonstration Requirement | Marks
 
 | Demonstrate successful Http Request to sign in with email/password using the Firebase Authentication REST API.
+
 This is due at the beginning of class on week 3 day 2.
+
 | 1
 
 | Demonstrate successful Http Request to create new data for a secured Firebase Realtime Database REST API endpoint.
+
 This is due at the beginning of class on week 3 day 2.
+
 | 1
 
 | Demonstrate successful Http Request to get content-owner only access data for a secured Firebase Realtime Database REST API endpoint.
+
 This is due at the beginning of class on week 3 day 2.
+
 | 1
 
 | Demonstrate successful Jakarta Faces page to sign in and to sign out.
-| 1
+
 This is due at the beginning of class on week 4 day 1.
+
+| 1
 
 | Demonstrate successful Jakarta Faces page to sign up with email and password.
 Use the Firebase Console to verify user have been added to Firebase Authentication.
 Demonstrate bean validation messages for email and password.
-| 2
+
 This is due at the beginning of class on week 4 day 1.
+
+| 2
 
 | Demonstrate successful Jakarta Faces page for adding new data for the current authenticated user in the Firebase Realtime Database.
 Use the Firebase Console to verify data has been added to Firebase Realtime Database.
-| 1
+
 This is due at the beginning of class on week 4 day 2.
+
+| 1
 
 | Demonstrate successful Jakarta Faces page for getting all data for the current authenticated user in the Firebase Realtime Database.
 Use the Firebase Console to verify content matches data in Firebase Realtime Database.
-| 1
+
 This is due at the beginning of class on week 4 day 2.
+
+| 1
 
 | Demonstrate successful Jakarta Faces page for updating data for the current authenticated user in the Firebase Realtime Database.
 Use the Firebase Console to verify data updated in Firebase Realtime Database.
-| 1
+
 This is due at the beginning of class on week 4 day 2.
+
+| 1
 
 | Demonstrate successful Jakarta Faces page for deleting data for the current authenticated user in the Firebase Realtime Database.
 Use the Firebase Console to verify data deleted in Firebase Realtime Database.
-| 1
+
 This is due at the beginning of class on week 4 day 2.
+
+| 1
 
 |===
 
