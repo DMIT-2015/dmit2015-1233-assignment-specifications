@@ -5,7 +5,7 @@
 == OBJECTIVE
 Upon completion of this assignment, you will have demonstrated the ability to:
 
-- Use Firebase Authentication to create users and add a Email/Password provider. 
+- Use Firebase Authentication to create users and add a Email/Password provider for sign in method. 
 - Use Firebase Realtime Database security rules to restrict access to REST API endpoints
 - Write a REST Client to consume Firebase Authentication REST API endpoints.
 - Write a REST Client to use tokens with Firebase Realtime Database REST API endpoints
@@ -79,7 +79,7 @@ poml.xml
     <version>14.0.0</version>
     <classifier>jakarta</classifier>
 </dependency>
- <dependency>
+<dependency>
     <groupId>com.googlecode.owasp-java-html-sanitizer</groupId>
     <artifactId>owasp-java-html-sanitizer</artifactId>
     <version>20240325.1</version>
@@ -161,7 +161,7 @@ poml.xml
 == REQUIREMENTS
 . Sign to https://console.firebase.google.com/[Firebase Console] and add *Authentication* build to your project with *Email/Password* for the sign-in method. 
 Add two new user using the Firebase Console or using the Firebase Authentication REST API endpoint to https://firebase.google.com/docs/reference/rest/auth/#section-create-email-password[sign up with email / password].
-. Manually test the Firebase Auth REST API endpoint to https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-password[sign in with email / password] using an Http Client of your choice (IntelliJ IDEA HTTP Client, curl command, Swagger-UI, Postman, or SoapUI).
+. Manually test the Firebase Auth REST API endpoint to https://firebase.google.com/docs/reference/rest/auth/#section-sign-in-email-password[sign in with email / password] using an Http Client of your choice (IntelliJ IDEA HTTP Request, curl command, Swagger-UI, Postman, or SoapUI).
 . Edit the security *Rules* for the Realtime Database to restrict accessto the authenticated owner of the content only. The data is only readable and writeably by oner user, and the data path contains the user's ID.
 . Manually test the secured Firebase Realtime Databse REST API endpoint to https://firebase.google.com/docs/database/rest/save-data#section-post[Save lists of data] using an Http Client of your choice (IntelliJ IDEA HTTP Client, curl command, Swagger-Ui, Postman, or SoapUI). You will need to pass into the HTTP post request the *Firebase Auth ID token* and the *uid* for an authenticated user. 
 . Create and code the Faces web pages and its supporting Java classes to allow an anonymous user to login and for an authenticated user to logout.
