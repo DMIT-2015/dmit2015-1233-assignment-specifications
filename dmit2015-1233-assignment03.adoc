@@ -265,7 +265,7 @@ poml.xml
     <artifactId>wildfly-jar-maven-plugin</artifactId>
     <version>11.0.2.Final</version>
     <configuration>
-        <feature-pack-location>wildfly@maven(org.jboss.universe:community-universe)#32.0.0.Final</feature-pack-location>
+        <feature-pack-location>wildfly@maven(org.jboss.universe:community-universe)#32.0.1.Final</feature-pack-location>
         <layers>
             <!-- https://docs.wildfly.org/32/Bootable_Guide.html#wildfly_layers -->
             <layer>cloud-server</layer> <!-- includes ee-security -->
