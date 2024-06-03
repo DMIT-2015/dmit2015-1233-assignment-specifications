@@ -1,4 +1,4 @@
-= DMIT2015 Assignment 3 - Jakarta Persistence (Model First) and Functional UI Testing
+= DMIT2015 Assignment 3 - Jakarta Persistence (Model First), Integration Testing, and Automated Functional UI Testing
 :source-highlighter: rouge
 :max-width: 90%
 
@@ -35,7 +35,7 @@ You will write and run a Java program to populate your database with at least 10
 
 You will create a Integration Test to verify that your Jakarta Persistence (JPA) repository methods to create data and to return all data are working as expected.
 
-You will create a single Faces web that allows the user to create data and to list all data.
+You will create a single Faces web page that allows the user to create data and to list all data.
 
 You will use Selenium WebDriver to automated the web testing of your Faces page to create data and to list all data.
 
