@@ -368,7 +368,7 @@ The `version` is updated by the database when an entity is updated.
 
 . Create and code the Jakarta Faces (JSF) web pages and its supporting Java classes to peform CRUD operations on your JPA entity.
 
-. Modify `src/main/webapp/WEB-INF/faces-templates/layout.xhtml` and add links to the web pages to *List YourEntity*, and *Create YourEntity*.
+. Modify `src/main/webapp/WEB-INF/faces-templates/layout.xhtml` and add a link to the Faces *CRUD* page.
 
 . Create a JUnit Test Case class to test the functionality of each web pages using Selenium WebDriver.
 You can use the same test data that you used in your Jakarta Persistence Integration Test. 
