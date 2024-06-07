@@ -403,7 +403,7 @@ You can use the same test data that you used in your Jakarta Persistence Integra
 
 | 2
 
-| Demonstrate automated web application testing to create to create data and to list all data. 
+| Demonstrate automated web application testing to create data and to list all data. 
 
 | 2
 
