@@ -11,5 +11,3 @@
 7. [Assignment 7](./dmit2015-1233-assignment07.adoc)
 8. [Assignment 8](./dmit2015-1233-assignment08.adoc)
 9. [Course Project](./dmit2015-1233-courseproject.adoc)
-   
-   
