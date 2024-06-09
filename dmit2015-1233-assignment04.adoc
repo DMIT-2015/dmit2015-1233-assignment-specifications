@@ -397,7 +397,9 @@ https://developer.here.com/documentation/examples/maps-js/markers/markers-on-the
 | Demonstrate using PrimeFaces AutoComplete to search for a product by partial name.
 
 1 - Typing the AutoComplete field shows matching results.
+
 2 - Selecting a matching result completes the AutoComplete field.
+
 3 - A Faces Converter is implemented to track the object selected.
 
 | 3
@@ -405,6 +407,7 @@ https://developer.here.com/documentation/examples/maps-js/markers/markers-on-the
 | Demonstrate displaying a list of search results.
 
 1 - QtyInStock (productInventory) column shows correct value.
+
 2 - Store Name and Store Address columns shows correct values.
 
 | 2
