@@ -335,7 +335,7 @@ poml.xml
 . Commit and push your project to your GitHub repository.
 
 == REQUIREMENTS
-. From the Database window in IntelliJ, navigate to the tables folder of the OR schema. Right-mouse click on tables then select *Create JPA Entities from DB*
+. From the Database window in IntelliJ, navigate to the tables folder of the CO schema. Right-mouse click on tables then select *Create JPA Entities from DB*
 .. Set the *Entity Package* field to `dmit2015.entity`
 .. Check the *Tables* option to select all tables.
 ... Select each table and check the *References* option to generate entity associations.
