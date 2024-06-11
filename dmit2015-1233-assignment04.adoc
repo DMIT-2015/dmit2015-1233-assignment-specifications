@@ -339,7 +339,7 @@ poml.xml
 .. Set the *Entity Package* field to `dmit2015.entity`
 .. Check the *Tables* option to select all tables.
 ... Select each table and check the *References* option to generate entity associations.
-.. Verify entity classes for `Customer`, `Inventory`, `Order`, `OrderItem`, `OrderItemId, `Product`, `Shipment` and `Store`.
+.. Verify entity classes for `Customer`, `Inventory`, `Order`, `OrderItem`, `OrderItemId`, `Product`, `Shipment` and `Store`.
 . In the Java package `dmit2015.persistence`, use the *DMIT2015 Jakarta Persistence CRUD Repository* file template to create Jakarta Persistence repository for the *Product* entity class.
 .. Add a method to search for products by a product name pattern such as:
 +
@@ -361,7 +361,6 @@ public List<Inventory> findInventoryByProductId(Long productId) {
 +
 . Create and code the Faces web pages and its supporting Java classes to search for product inventory by a selected product.
 .. The Faces page will use a http://www.primefaces.org:8080/showcase/ui/input/autoComplete.xhtml?jfwid=b43d8[PrimeFaces AutoComplete] component for search and select the product.
-.. image::./images/assignment04_autocomplete.png[Auto Complete]
 
 .. Clicking on the http://www.primefaces.org:8080/showcase/ui/button/commandButton.xhtml?jfwid=b43d8[PrimeFaces CommandButton] will display a list that shows the *Store Name*, *Store Address*, and *Qty In Stock* for the selected product.
 
@@ -388,7 +387,7 @@ https://developer.here.com/documentation/examples/maps-js/markers/markers-on-the
 |===
 |Demonstration Requirement|Mark
 
-| Generated entity classes for `Customer`, `Inventory`, `Order`, `OrderItem`, `OrderItemId, `Product`, `Shipment` and `Store`.
+| Generated entity classes for `Customer`, `Inventory`, `Order`, `OrderItem`, `OrderItemId`, `Product`, `Shipment` and `Store`.
 | 1
 
 | Demonstrate project is deployed and home page is accessible.
