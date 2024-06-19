@@ -28,7 +28,7 @@ The *Accounting* role is allowed view Bill and BillPayment for all users and can
 . Click on *Clone or download* button then copy the URL to your repository to the clipboard.
 
 == PROJECT SETUP
-. From IntelliJ IDEA open the project *dmit2015-1233-assignment05-start* that is included in the GitHub repository for this assignment.
+. From IntelliJ IDEA open the project *dmit2015-assignment05-start* that is included in the GitHub repository for this assignment.
 . Open a Terminal window and type the command `mvn wildfly-jar:dev-watch` to start the Jboss WildFly server.
 . Once the project has been deployed open a browser and navigate to `http://localhost:8080` and using the navigation menu verify that the pages for List Bill and Create Bill are fully functional.
 . Navigate to the `src/main/java/dmit2015/config` folder and open `ApplicationConfig.java` and change the `@DataSourceDefinition` 
@@ -134,8 +134,8 @@ directly to set the `username` of the BillPayment before it is persisted.
 . Test your application that you can login using an *Finance* account and create/edit Bills and BillPayments. 
 
 . To avoid losing all your data each time your application starts.
-.. Open *ApplicationConfig.java* comment out the line `url="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=LEGACY;",`
-and uncomment the line `url="jdbc:h2:file:~/jdk/databases/h2/DMIT2015CourseDB;MODE=LEGACY;",` 
+.. Open *ApplicationConfig.java* comment out the line `url="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;",`
+and uncomment the line `url="jdbc:h2:file:~/jdk/databases/h2/DMIT2015CourseDB;",` 
 .. Open *persistence.xml* change the property `jakarta.persistence.schema-generation.database.action` value 
 from `drop-and-create` to `create`.
 
@@ -172,3 +172,6 @@ using the Public menu links to create a new bill results in an access denied mes
 * https://eclipse-ee4j.github.io/jakartaee-tutorial/#security-2[Security in the Jakarta EE Platform]
 * https://javaee.github.io/tutorial/interceptors.html#GKEED[Using Jakarta EE Interceptors]
 * https://jakarta.ee/specifications/interceptors/2.0/interceptors-spec-2.0.html[Jakarta Interceptors]
+* https://shiro.apache.org/jakarta-ee.html[Apache Shiro Jakarta EE Integration]
+* https://shiro.apache.org/web.html[Apache Shiro Web Support]
+* https://shiro.apache.org/documentation.html[Apache Shiro Documentation]
