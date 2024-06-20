@@ -1,25 +1,26 @@
-= DMIT2015 Assignment 5 - Jakarta EE Security with a Multiuser Entity System
+= DMIT2015 Assignment 5 - Jakarta Security with Content-Owner Only Access Data
 :source-highlighter: rouge
 :max-width: 90%
 
 == OBJECTIVE
 Upon completion of this assignment, you will have demonstrated the ability to:
 
-* Secure a JakartaEE appplication using the security features provided by the Jakarta EE container
+* Secure a Jakarta EE appplication using Jakarta Security and/or Apache Shiro
 * Apply container-managed authentication, authorization, and data protection.
 * Secure the methods of a CDI managed bean using interceptors.
 * Create and use custom error pages for common HTTP error codes.
-* Create a multiuser entity system where each user can manage their own entity.
+* Implement content-owner only access data.
 
 == PROBLEM DESCRIPTION
 In this assignment you are going to convert the starter project for this assignment 
 that contains a non-secure single-user Bill and Bill Payment application
 to a secure multi-user application where each user can manage their own Bill and Bill Payment. 
 
-The application will support three security groups: *Finance* and *Accounting*.
+The application will support two security groups: *Finance* and *Accounting*.
 The *Finance* role is allowed to create, edit/update, and view their own Bill and BillPayment.
 The *Accounting* role is allowed view Bill and BillPayment for all users and can delete Bill and BillPayment.
 
+This assignment can be completed using either Jakarta Security OR Apache Shiro.
 
 == GIT REPOSITORY SETUP
 . Login to Moodle and navigate to the link to create a private github repository for this assignment.
@@ -32,7 +33,7 @@ The *Accounting* role is allowed view Bill and BillPayment for all users and can
 . Open a Terminal window and type the command `mvn wildfly-jar:dev-watch` to start the Jboss WildFly server.
 . Once the project has been deployed open a browser and navigate to `http://localhost:8080` and using the navigation menu verify that the pages for List Bill and Create Bill are fully functional.
 . Navigate to the `src/main/java/dmit2015/config` folder and open `ApplicationConfig.java` and change the `@DataSourceDefinition` 
-to an SQL Server, Oracle, H2 file database.
+to one of the following database: Oracle 23ai, SQL Server 2022, H2 file, PostgreSQL, MySQL, or MariaDB.
 . Open a browser and verify that the pages for List Bill and Create Bill are still fully functional.
 
 
@@ -40,11 +41,11 @@ to an SQL Server, Oracle, H2 file database.
 . Configure the *wildfly-jar-maven-plugin* in `pom.xml` to:
 .. Add a `layer` element for `ee-security`
 .. Add a `layer` element for `undertow-https`
-.. Add a `cli-session` to enable Jakarta EE Security
+.. Add a `cli-sessions` element to run CLI script file to enable EE security
 
-. Add a secrity constraint in `web.xml` to force the use HTTPS for all URLs in the application.
+. Configure web application to transport all URLs over HTTPS.
 
-. Add a security constraint in `web.xml` to restrict access to the following url patterns and role names.
+. Configure web application to restrict access to the following url patterns and role name.
 +
 [cols="2,1"]
 |===
@@ -56,7 +57,7 @@ to an SQL Server, Oracle, H2 file database.
 | Finance
 |===
 +
-. Add a security constraint in `web.xml` to restrict access to the following url patterns and role names.
+.  Configure web application to restrict access to the following url patterns and role name.
 +
 [cols="2,1"]
 |===
@@ -72,7 +73,7 @@ to an SQL Server, Oracle, H2 file database.
 | Accounting
 |===
 +
-. Add a security constraint in `web.xml` to restrict access to the following url patterns and role names.
+.  Configure web application to restrict access to the following url patterns and role names.
 +
 [cols="2,1"]
 |===
@@ -96,13 +97,16 @@ Finance
 |===
 +
 
-. Configure the project (`ApplicationConfig.java`, `OidcConfig.java`, `OidcLogout.java`) to use OpenIDConnect Authentication mechanism.
+. Configure application to use either LDAP or Database authentication. 
+For LDAP authentication configure you application to use the Windows Server 2022 VM as the LDAP server. 
+For Database authentication you will need to create the same user accounts from the Windows Server 2022 VM.
 
 . Modify the Faces layout file `/src/main/webapp/WEB-INF/faces-templates/layout.xhml` with a link to login and a link logout.
 
 . Modify `Bill.java` and add a property for the authenticated `username`.
 
-. Using either an CDI Interceptor or modify the `BillRepository.java` method `create()` directly to set the `username` of the Bill before it is persisted.
+. Using either an CDI Interceptor or modify the `BillRepository.java` method `create()` 
+directly to set the `username` of the Bill before it is persisted.
 
 . Modify `BillRepository.java` method `findAll()` directly to work as follows:
 .. If the caller is anonymous (non-authenticated) user then throw an `RuntimeException`.
@@ -121,13 +125,13 @@ directly to set the `username` of the BillPayment before it is persisted.
 .. If the caller is the role *Accounting* then return all BillPayment entity.
 .. If the caller is not in the role *Finance* or *Accounting* then return a empty list.
 
-. Using a CDI Interceptor restrict access to the methods `create()` and `update()` to the role *Finance* in `BillRepository.java`.
+. Configure your application to restrict access to the `create` and `update` methods to the role *Finance* in `BillRepository.java`.
 
-. Using a CDI Interceptor restrict access to the methods `create()` and `update()` to the role *Accounting* in `BillPaymentRepository.java`.
+. Configure your application to restrict access to the `create` and `update` methods to the role *Accounting* in `BillPaymentRepository.java`.
 
-. Using a CDI Interceptor restrict access to the methods `remove()` and `delete()` to the role *Accounting* in `BillRepository.java` and `BillPaymentRepository.java`.
+. Configure your application to restrict access to the `remove` and `delete` methods to the role *Accounting* in `BillRepository.java` and `BillPaymentRepository.java`.
 
-. Using a CDI Interceptor restrict access to the method `findOneById()` to the roles *Finance* and *Accounting*.
+. Configure your application to restrict access to the `findOneById` method to the roles *Finance* and *Accounting*.
    
 . Configure your project to display custom error pages for error codes 403, 404, and 500.
 
