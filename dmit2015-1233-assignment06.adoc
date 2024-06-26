@@ -11,11 +11,13 @@ Upon completion of this assignment, you will have demonstrated the ability to:
 * Invoke RESTful services over HTTP using a Rest Client from a Jakarta Faces web application
 
 == PROBLEM DESCRIPTION
-In this assignment you will build and test REST API endpoints to perform CRUD operations on the database entity you created in assignment 3.
+In this assignment you will build and test REST API endpoints to perform CRUD operations on the database entity you
+created in assignment 3.
 
 In the stater project of this assignment you are provided with two projects:
 
-. A *dmit2015-assignment06-restapi-start* project for building REST API endpoints to perform CRUD operations on the database table you created in assignmetn 3.
+. A *dmit2015-assignment06-restapi-start* project for building REST API endpoints to perform CRUD operations on the
+database table you created in assignment 3.
 The REST API application will run on port *8090*.
 . A *dmit2015-assignment06-restclient-start* project that access REST API to perform CRUD operations. 
 The REST Client application will run on port *8080*.
@@ -29,13 +31,14 @@ The REST Client application will run on port *8080*.
 
 == REST API PROJECT REQUIREMENTS
 . Open the project located in the *dmit2015-assignment06-restapi-start* folder of your github repository.
-. Copy your assignment 3 JPA entity classa and JPA repository to this project.
+. Copy your assignment 3 files for `ApplicationConfig.java`, `persistence.xml`, JPA entity class, and JPA repository to this project.
 . Create a new REST API using JAX-RS to perform CRUD operations on your JPA entity. 
-When you create or update an entity you do NOT need to include the properties for `createTime` and `updateTime` as they will be assigned by the system.
+When you create or update an entity you do NOT need to include the properties for `createTime` and `updateTime` as they
+will be assigned by the system.
 When you update an entity you must include the `version` property required by JPA for optimistic locking mechanism.
 
-. Add a `README.md` file in the root of the project folder with a Test Plan to test your web services using the template shown below. 
-Replace the underline with your own test data.
+. Add a `README.md` file in the root of the project folder with a Test Plan to test your web services using the 
+template shown below. Replace the underline with your own test data.
 
 [cols="2,2,2,1"]
 |===
@@ -104,22 +107,29 @@ Response Body:
 |===
 
 [start=5]
-. Manually test your REST API endpoints using an Http Client of your choice (IntelliJ IDEA HTTP Client, curl command, Swagger-Ui,Postman, or SoapUI).
+. Manually test your REST API endpoints using an Http Client of your choice (IntelliJ IDEA HTTP Client, curl command, 
+Swagger-Ui,Postman, or SoapUI).
 . Create a Data Transter Object (DTO) class for your assignment that excludes properties for createTime and updateTime.
 . Create REST API endpoints to perform CRUD operations on the Data Transfer Object (DTO) for the entity.
-. Manually test the DTO version of the REST API endpoints using an Http Client of your choice (IntelliJ IDEA HTTP Client, curl command, Swagger-Ui, Postman, or SoapUI).
+. Manually test the DTO version of the REST API endpoints using an Http Client of your choice (IntelliJ IDEA HTTP 
+Client, curl command, Swagger-Ui, Postman, or SoapUI).
 
 == REST CLIENT PROJECT REQUIREMENTS
 . Open the project located in the *dmit2015-assignment06-restclient-start* folder of your github repository.
 . Automate the testing of your REST API endpoints by writing a integration test with REST Assured. 
-. Create a REST Client application using either Jakarta Faces or JavaScript with pages to display a list of entities fetched from your REST API and a page to create a new entity using your your REST API.
-.. If you are building a REST Client using Microprofile REST Client it is the same technique you used to build REST Client to access the Firebase Realtime Database REST API with the exception that the URLs does not end with *.json* suffix.
+. Create a REST Client application using either Jakarta Faces or JavaScript with pages to display a list of entities
+fetched from your REST API and a page to create a new entity using your your REST API.
+.. If you are building a REST Client using Microprofile REST Client it is the same technique you used to build REST 
+Client to access the Firebase Realtime Database REST API with the exception that the URLs does not end with *.json*
+suffix.
 
 == CODING REQUIREMENTS
 * An JPA entity on *TodoItem* or *Movie* or *WeatherData* will not be accepted. 
 * You *MUST* demo your assigment to your instructor (*100%* deduction if you do not demo)
-* Your integration test data *MUST* match your test plan (*10%* deduction for each test case where the test data in the code does not match the test plan)
-* Your REST API must process Data Transfer Objects (DTOs) instead of JPA entities (*20%* deduction if REST API endpoints proceses JPA entities instead of DTOs)
+* Your integration test data *MUST* match your test plan (*10%* deduction for each test case where the test data in the
+code does not match the test plan)
+* Your REST API must process Data Transfer Objects (DTOs) instead of JPA entities (*20%* deduction if REST API 
+endpoints proceses JPA entities instead of DTOs)
 
 == MARKING GUIDE
 
