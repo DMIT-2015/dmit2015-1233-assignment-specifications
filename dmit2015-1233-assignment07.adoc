@@ -17,16 +17,18 @@ For team of 2 or more members each team member must implement a different REST A
 
 In this assignment you are provided with three projects:
 
-. A *dmit2015-assignment07-rbac-restclient-start* project for building RBAC REST API endpoints on a entity of your choice. The REST API application will run on port *8181*.
-. A *dmit2015-assignment07-multiuser-restclient-start* project for building multi-user REST API endpoints on a entity of your choice. The REST API application will run on port *8182*.
-. A *dmit2015-assignment07-restclient-start* project for building REST Client application using Jakarta Faces that access the Keycloak JWT REST API, your RBAC REST API, and your multi-user REST API. The REST Client application will run on port *8080*.
+. A *dmit2015-assignment07-rbac-restapi-start* project for building RBAC REST API endpoints on a entity of your choice. 
+The REST API application will run on port *8181*.
+. A *dmit2015-assignment07-multiuser-restapi-start* project for building multi-user REST API endpoints on a entity of your choice. The REST API application will run on port *8182*.
+. A *dmit2015-assignment07-restclient-start* project for building REST Client application using Jakarta Faces that access the Keycloak JWT REST API, your RBAC REST API, and your multi-user REST API. 
+The REST Client application will run on port *8080*.
 
 In this assigment you will develop three microservices REST API and a REST Client Jakarta Faces applications that utilizies the REST API from three microservices REST API.
 The three microservices REST API that you will develop are as follows:
 
-. A REST API *jwt* microservice that runs on port *8180* with an endpoint to generate a JWT for an LDAP or Database account.
+. A REST API *JWT* microservice that runs on port *8180* with an endpoint to generate a JWT for an LDAP or Database account.
 .. You will be configuring Keycloak to generate a JWT for an LDAP or Database account.
-. A REST API *rbac* microservice that runs on port *8181* with secure endpoint to manage a collection of entity where:
+. A REST API *RBAC* microservice that runs on port *8181* with secure endpoint to manage a collection of entity where:
 .. The roles *Administration*, *Executive*, and *Finance* can add a entity
 .. The roles *Administration*, and *Executive* can update an entity
 .. The role  *Executive* can delete an entity
