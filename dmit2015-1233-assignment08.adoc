@@ -6,23 +6,23 @@
 Upon completion of this assignment, you will have demonstrated the ability to:
 
 - Create a batch job with a batchlet to perform an ETL process to move data from a OLTP database to an OLAP database. 
-- Send an email notification.
+- Send an email notification with the contents of the migrated data.
 
 == PROBLEM DESCRIPTION
-In this assignment you will create an Batch Job to perform the ETL processing with SQL to copy data from the *Northwind* OLTP database 
-to the *DWNorthwindOrders* OLAP database.
+In this assignment you will create an Batch Job to perform the ETL processing with SQL to copy data 
+from the *Northwind* OLTP database to the *DWNorthwindOrders* OLAP database.
 
 The steps need to perform the ETL processing with SQL are as follows:
 
-. Drop Foreign Keys
-. Clear All (Truncate) Tables
-. Fill DimCustomers table.
-. Fill DimEmployees table.
-. Fill DimProducts table.
-. Fill DimDates table.
-. Add Null Data Lookup Values.
-. Fill FactOrders table.
-. Add Foreign Key Constraints.
+. Drop Foreign Keys by executing the SQL script file `northwind-etl-drop-foreign-keys.sql`
+. Clear All (Truncate) Tables by executing the SQL script file `northwind-etl-truncate-tables.sql`
+. Fill DimCustomers table by executing the SQL script file `northwind-etl-fill-DimCustomers.sql`
+. Fill DimEmployees table by executing the SQL script file `northwind-etl-fill-DimEmployees.sql`
+. Fill DimProducts table by executing the SQL script file `northwind-etl-fill-DimProducts.sql`
+. Fill DimDates table by executing the SQL script file `northwind-etl-fill-DimDates.sql`
+. Add Null Data Lookup Values by executing the SQL script file `northwind-etl-add-null-date-lookup-values.sql`
+. Fill FactOrders table by executing the SQL script file `northwind-etl-fill-FactOrders.sql`
+. Add Foreign Key Constraints by executing the SQL script file `northwind-etl-add-foreign-keys.sql`
 
 === Docker Container for SQL Server 
 On the Ubuntu Desktopn VM there is a docker container for SQL Server which must be manually started when you need to use them.
@@ -100,7 +100,7 @@ If you want to access the SQL Server running on your Windows host machine
 . Click *Create*
 . Make the following changes to `pom.xml`
 * Change the element value for both `maven.compiler.target` and `maven.compiler.target` to `*21*`.
-* Change the element value for `junit.version` to `*5.10.2*`.
+* Change the element value for `junit.version` to `*5.10.3*`.
 * *Add* the following dependencies to the `<dependencies>` element.
 
 poml.xml
@@ -127,7 +127,7 @@ poml.xml
 <dependency>
     <groupId>org.projectlombok</groupId>
     <artifactId>lombok</artifactId>
-    <version>1.18.32</version>
+    <version>1.18.34</version>
     <scope>provided</scope>
 </dependency>
 
@@ -145,7 +145,13 @@ poml.xml
 <dependency>
     <groupId>com.microsoft.sqlserver</groupId>
     <artifactId>mssql-jdbc</artifactId>
-    <version>12.6.1.jre11</version>
+    <version>12.6.3.jre11</version>
+</dependency>
+
+<dependency>
+    <groupId>com.oracle.database.jdbc</groupId>
+    <artifactId>ojdbc11</artifactId>
+    <version>23.4.0.24.05</version>
 </dependency>
 
 ----
@@ -163,7 +169,7 @@ poml.xml
     <artifactId>wildfly-jar-maven-plugin</artifactId>
     <version>11.0.2.Final</version>
     <configuration>
-        <feature-pack-location>wildfly@maven(org.jboss.universe:community-universe)#32.0.1.Final</feature-pack-location>
+        <feature-pack-location>wildfly@maven(org.jboss.universe:community-universe)#33.0.0.Final</feature-pack-location>
         <layers>
             <!-- https://docs.wildfly.org/31/Bootable_Guide.html#wildfly_layers -->
             <layer>jaxrs-server</layer>
@@ -216,12 +222,13 @@ poml.xml
     .. `dmit2015.ejb`
     .. `dmit2015.resource`
 
-. Define a data source defintion to the *DWNorthwindOrders* database.
+. Define a JTA data source definition to the *DWNorthwindOrders* database.
 
 . Open the Jakarta Persistence configuration file *persistence.xml* and define a persistence unit to the data source definition for the *DWNorthwindOrders* database. 
 
 . Open the *HelloApplication.java* class and change the @ApplicationPath value from `api` to `restapi`.
-. Download from Moodle all the SQL script that begins with *northwind-etl* and copy them to your project.
+. Download from the assignment specifications GitHub repository all the SQL script in the assignment08files folder 
+and copy the files to the `src/main/resources/data/sql` folder of your project.
 
 == REQUIREMENTS
 . Create a Batchlet class that can execute multi-line native SQL code from a SQL script file.
@@ -269,26 +276,33 @@ dimDates.forEach(row -> {
 |===
 |Demonstration Requirement|Mark
 
-| Demonstrate that all tables in the *DWNorthwindOrders* database are empty before the batch job starts.
+| Show your instructor that all tables in the *DWNorthwindOrders* database are empty before the batch job starts.
 | 1
 
-| Demonstrate that the *DimCustomers* table have correct data in it after the batch job completes.
+| Show your instructor that the *DimCustomers* table have correct data in it after the batch job completes.
 | 1
 
-| Demonstrate that the *DimEmployees* table have correct data in it after the batch job completes.
+| Show your instructor that the *DimEmployees* table have correct data in it after the batch job completes.
 | 1
 
-| Demonstrate that the *DimProducts* table have correct data in it after the batch job completes.
+| Show your instructor that the *DimProducts* table have correct data in it after the batch job completes.
 | 1
 
-| Demonstrate that the *DimDates* table have correct data in it after the batch job completes.
+| Show your instructor that the *DimDates* table have correct data in it after the batch job completes.
 | 1
 
-| Demonstrate that the *FactOrders* table have correct data in it after the batch job completes.
+| Show your instructor that the *FactOrders* table have correct data in it after the batch job completes.
 | 1
 
-| Demonstrate that an email is sent after the batch job completes with the contents of each table in the body of the email.
-(1 - mail sent, 2 - data is formatted in plain text, 3 - data is formatted as an HTML table)
+| Show your instructor that an email is sent after the batch job completes and the body of email containts the
+table name, column name, and rows for each table in DWNorthwindOrders.
+
+1/3 mark - mail sent
+
+2/3 mark - body of email contains the table name, column names, and rows for all tables in plain text format
+
+3/3 - body of email contains the table name, column names, and rows for all tables in plain text format is formatted as an HTML table
+
 | 3 
 
 |===
