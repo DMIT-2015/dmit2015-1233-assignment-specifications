@@ -52,7 +52,7 @@ docker stop dmit2015-sqlserver
 . Start the Docker container for *dmit2015-sqlserver*
 . Download from https://github.com/DMIT-2015/dmit2015-1233-assignment-specifications/tree/main/assignment08files[GitHub] the *InstNwnd.sql* SQL script file that contains the code to create the *Northwind* OLTP database.
 . Download from https://github.com/DMIT-2015/dmit2015-1233-assignment-specifications/tree/main/assignment08files[GitHub] the *Create DWNorthwindOrders Script.sql* script file that contains the code to create the *DWNorthwindOrders* OLAP database.
-. Open Azure Data Studio and double-click on the *localhost.DMIT2015CourseDB* connection.\
+. Open Azure Data Studio and double-click on the *localhost.DMIT2015CourseDB* connection.
 . From the main menu click "File | Open File..."
 .. The Browse dialog open. Navigate to the Downloads folder and select *InstNwnd.sql*.
 .. Execute the query by clicking on the *Run* button located in the toolbar.
@@ -152,6 +152,12 @@ poml.xml
     <groupId>com.oracle.database.jdbc</groupId>
     <artifactId>ojdbc11</artifactId>
     <version>23.4.0.24.05</version>
+</dependency>
+
+<dependency>
+    <groupId>org.thymeleaf</groupId>
+    <artifactId>thymeleaf</artifactId>
+    <version>3.1.2.RELEASE</version>
 </dependency>
 
 ----

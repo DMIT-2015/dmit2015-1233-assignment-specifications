@@ -20,11 +20,11 @@ The frontend of a full stack application could be implemented using any one of f
 
 The frontend application must implement the following pages:
 
-* A page to find a single record.
-* A page to list all records.
 * A page to login and store the JWT returned for future usage.
-* A secured page to create a new record by calling an secured REST API endpoint.
-* A secured page to find, edit, and update an existing record by calling secured REST API endpoints.
+* A secured page that calls the secured REST API endpoint from assignment 7 to fetch all records assoicated with the authenticated user.
+* A secured page that calls the secured REST API endpoint from assignment 7 to find a single record assoicated with the authenticated user.
+* A secured page that calls the secured REST API endpoint from assignment 7 to create a new record assoicated with the authenticated user.
+* A secured page that calls the secured REST API endpoint from assignment 7 to find, edit, and update an existing record assoicated with the authenticated user.
 
 The backend application can be implemented using any one of the following backend frameworks:
 
@@ -36,9 +36,9 @@ The backend application can be implemented using any one of the following backen
 
 The backend application must implement a REST API with the following endpoints:
 
+* An open endpoint to return a JWT for a database or LDAP account.
 * An secured endpoint to return a single record by a unique identifier field for the current authenticated user.
 * An secured endpoint to return a list of records associated with the current authenticated user.
-* An open endpoint to return a JWT for a database or LDAP account.
 * An secured endpoint to create a new record associated with the current authenticated user.
 * An secured endpoint to update an existing record assoicated with the current authenticated user.
 
